@@ -35,3 +35,15 @@
 # Battery Level (0x2A19): READ | NOTIFY (0x12), initial value 0x21 = 33%; C6 adds the CCCD automatically.
 32,16,0x2803,0x01,1,1,12
 33,16,0x2A19,0x01,1,1,21
+# Device Information Service (0x180A)
+# Generic placeholders - update at runtime via AT+BLEGATTSSETATTR (max 32 bytes each).
+34,16,0x2800,0x01,2,2,180A
+# Manufacturer Name String (0x2A29): READ, generic "Generic"
+35,16,0x2803,0x01,1,1,02
+36,16,0x2A29,0x01,32,7,47656E65726963
+# Model Number String (0x2A24): READ, generic "Generic"
+37,16,0x2803,0x01,1,1,02
+38,16,0x2A24,0x01,32,7,47656E65726963
+# Firmware Revision String (0x2A26): READ, generic "v0.0.0"
+39,16,0x2803,0x01,1,1,02
+40,16,0x2A26,0x01,32,6,76302E302E30
