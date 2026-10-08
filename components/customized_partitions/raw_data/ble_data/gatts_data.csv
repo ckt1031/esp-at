@@ -47,3 +47,26 @@
 # Firmware Revision String (0x2A26): READ, generic "v0.0.0"
 39,16,0x2803,0x01,1,1,02
 40,16,0x2A26,0x01,32,6,76302E302E30
+# Music Player Control Service (0xA100)
+41,16,0x2800,0x01,2,2,A100
+# Playback Command (0xA101): WRITE; one byte: 01 play, 02 pause, 03 stop, 04 next, 05 previous.
+42,16,0x2803,0x01,1,1,08
+43,16,0xA101,0x10,1,1,00
+# Playback State (0xA102): READ | NOTIFY; one byte: 00 stopped, 01 playing, 02 paused.
+44,16,0x2803,0x01,1,1,12
+45,16,0xA102,0x01,1,1,00
+# Volume (0xA103): READ | WRITE | NOTIFY; one byte, 0-100 (initially 50).
+46,16,0x2803,0x01,1,1,1A
+47,16,0xA103,0x11,1,1,32
+# Track Metadata (0xA104): READ | NOTIFY; UTF-8 title, up to 128 bytes.
+48,16,0x2803,0x01,1,1,12
+49,16,0xA104,0x01,128,0,
+# Playback Position (0xA105): READ | NOTIFY; uint32 seconds, little-endian.
+50,16,0x2803,0x01,1,1,12
+51,16,0xA105,0x01,4,4,00000000
+# Track Selection (0xA106): WRITE; uint16 track index, little-endian, zero-based.
+52,16,0x2803,0x01,1,1,08
+53,16,0xA106,0x10,2,2,0000
+# Track Duration (0xA107): READ; uint32 seconds, little-endian.
+54,16,0x2803,0x01,1,1,02
+55,16,0xA107,0x01,4,4,00000000
